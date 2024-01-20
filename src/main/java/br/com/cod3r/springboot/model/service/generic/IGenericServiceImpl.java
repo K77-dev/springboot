@@ -25,7 +25,7 @@ public abstract class IGenericServiceImpl<T, ID> implements IGenericService<T, I
     }
 
     @Override
-    public Optional<T> findById(ID id) {
+    public Optional<T> getById(ID id) {
         return repository.findById(id);
     }
 
@@ -34,8 +34,4 @@ public abstract class IGenericServiceImpl<T, ID> implements IGenericService<T, I
         return repository.findAll();
     }
 
-//    @Override
-//    public Page<T> findAll(PageRequest page) {
-//        return (Page<T>) repository.findAll(page);
-//    }
 }

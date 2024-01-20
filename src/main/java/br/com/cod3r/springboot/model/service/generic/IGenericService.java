@@ -11,7 +11,7 @@ public interface IGenericService<T, ID> {
 
     void delete(ID id);
 
-    Optional<T> findById(ID id);
+    Optional<T> getById(ID id);
 
     Iterable<T> getAll();
 }

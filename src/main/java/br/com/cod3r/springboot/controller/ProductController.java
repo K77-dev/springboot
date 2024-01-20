@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,7 +33,17 @@ public class ProductController {
 
     @GetMapping(path = "/{id}")
     public Optional<Product> getById(@PathVariable Integer id){
-        return service.findById(id);
+        return service.getById(id);
+    }
+
+    @GetMapping(path = "/price/{price}")
+    public List<Product> findByPrice(@PathVariable Double price){
+        return service.findByPrice(price);
+    }
+
+    @GetMapping(path = "/price/max")
+    public Optional<Product> findMaxPrice(){
+        return service.findMaxPrice();
     }
 
 }
