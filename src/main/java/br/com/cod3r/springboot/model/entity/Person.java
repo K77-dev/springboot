@@ -1,14 +1,22 @@
 package br.com.cod3r.springboot.model.entity;
 
-public class Client {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "person")
+public class Person {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String cpf;
 
-    public Client(int id, String name, String cpf) {
-        this.id = id;
+    public Person(String name) {
         this.name = name;
-        this.cpf = cpf;
+    }
+
+    public Person() {
+
     }
 
     public int getId() {
@@ -25,13 +33,5 @@ public class Client {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 }
